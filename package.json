@@ -1,0 +1,18 @@
+{
+  "name": "oca",
+  "version": "1.0.0",
+  "description": "The OCA personality test",
+  "main": "oca.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Mark Robson <mark.o.robson@gmail.com> (http://digioli.co.uk)",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  },
+  "dependencies": {
+    "prompt": "^1.0.0"
+  }
+}
