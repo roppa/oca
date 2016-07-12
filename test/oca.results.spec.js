@@ -3,6 +3,7 @@
 const expect = require('chai').expect;
 let OCA = require('../oca/oca');
 let traits = require('../oca/traits');
+let generateTemplate = require('../oca/template');
 
 describe('The OCA test', () => {
 

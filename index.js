@@ -2,6 +2,7 @@
 
 const OCA = require('./oca/oca');
 const prompt = require('prompt');
+let generateTemplate = require('./oca/template');
 
 prompt.start();
 
@@ -17,8 +18,16 @@ prompt.get(['sex (m for male, f for female)', 'age'], (error, result) => {
     questions.push({
       name: 'Q' + question.id + ': ' + question.question,
       pattern: /^[y,m,n]$/,
-      id: question.id,
-      required: true
+      id: this.name,
+      required: true,
+      before: (value) => {
+        if (!!!value.match(/^[y,m,n]$/)) {
+          return false;
+        }
+
+        oca.answer(question.id, value);
+        return true;
+      }
     });
 
   });
@@ -29,8 +38,7 @@ prompt.get(['sex (m for male, f for female)', 'age'], (error, result) => {
     if (error) {
       return console.log(error);
     }
-    console.log(result);
-    console.log(oca.generateResults());
+    console.log(generateTemplate(oca.generateResults().percentile));
 
   });
 
