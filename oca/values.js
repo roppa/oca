@@ -9,7 +9,7 @@ let values = {
   11: {
     y: { column: 'a', value: 2 },
     m: { column: 'a', value: 4 },
-    n: { column: 'a', value: 6 }
+    n: { column: 'a', value: 5 }
   },
   21: {
     y: { column: 'a', value: 3 },
