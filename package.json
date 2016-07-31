@@ -4,13 +4,18 @@
   "description": "The OCA personality test",
   "main": "oca.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build:dist": "browserify ./oca/oca.js -t [ babelify --presets [ es2015 ] ] -o | uglifyjs --compress --mangle > ./dist/oca.min.js"
   },
   "author": "Mark Robson <mark.o.robson@gmail.com> (http://digioli.co.uk)",
   "license": "ISC",
   "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
     "chai": "^3.5.0",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "uglifyjs": "^2.4.10"
   },
   "dependencies": {
     "prompt": "^1.0.0"
