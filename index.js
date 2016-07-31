@@ -39,6 +39,8 @@ prompt.get(['sex (m for male, f for female)', 'age'], (error, result) => {
       return console.log(error);
     }
     console.log(generateTemplate(oca.generateResults().percentile));
+    console.log('For future reference, here are your answers:');
+    console.log(oca.answered);
 
   });
 
